@@ -72,9 +72,9 @@ endif (CMAKE_COMPILER_IS_GNUCXX)
 # Add debug flags
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
   add_definitions(-D__RTAUDIO_DEBUG__)
-  if (CMAKE_COMPILER_IS_GNUCXX)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
-  endif (CMAKE_COMPILER_IS_GNUCXX)
+#  if (CMAKE_COMPILER_IS_GNUCXX)
+#    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
+#  endif (CMAKE_COMPILER_IS_GNUCXX)
 endif ()
 
 # Read libtool version info from configure.ac
@@ -97,7 +97,7 @@ file(STRINGS "${CMAKE_CURRENT_SOURCE_DIR}/configure.ac" CONFIGAC
 string(REGEX REPLACE "${R}" "\\1" PACKAGE_VERSION "${CONFIGAC}")
 
 # Init variables
-set(rtaudio_SOURCES RtAudio.cpp RtAudio.h rtaudio_c.cpp rtaudio_c.h)
+set(rtaudio_SOURCES RtAudio.cpp RtAudio.h)
 set(LINKLIBS)
 set(PKGCONFIG_REQUIRES)
 set(API_DEFS)
